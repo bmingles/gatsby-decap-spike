@@ -1,10 +1,11 @@
 import { Link } from 'gatsby'
+import { nav } from '../styles/components.module.scss'
 
 export interface NavProps {}
 
 export function Nav({}: NavProps) {
   return (
-    <nav>
+    <nav className={nav}>
       <ul>
         <li>
           <Link to="/">Home</Link>

@@ -1,0 +1,10 @@
+@use 'colors.scss';
+@use 'sizes.scss';
+
+:root {
+  --h1-font-size: var(--size-48);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}

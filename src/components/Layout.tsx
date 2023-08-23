@@ -1,5 +1,7 @@
 import { PropsWithChildren } from 'react'
 import Nav from './Nav'
+import '../styles/styles.scss'
+import { layout } from '../styles/components.module.scss'
 
 export interface LayoutProps {
   pageTitle: string
@@ -10,7 +12,7 @@ export function Layout({
   children,
 }: PropsWithChildren<LayoutProps>) {
   return (
-    <div>
+    <div className={layout}>
       <Nav />
       <main>
         <h1>{pageTitle}</h1>
