@@ -1,7 +1,5 @@
 import type { HeadFC, PageProps } from 'gatsby'
-import { Layout } from '../components'
-
-export const Head: HeadFC = () => <title>Home Page</title>
+import { Layout, Seo } from '../components'
 
 function IndexPage(_pageProps: PageProps) {
   return (
@@ -12,3 +10,5 @@ function IndexPage(_pageProps: PageProps) {
 }
 
 export default IndexPage
+
+export const Head: HeadFC = () => <Seo title="Home Page" />
