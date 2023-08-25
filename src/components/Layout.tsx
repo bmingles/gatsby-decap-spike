@@ -12,8 +12,8 @@ export function Layout({
   pageTitle,
   children,
 }: PropsWithChildren<LayoutProps>) {
-  const data = useStaticQuery(graphql`
-    query {
+  const data = useStaticQuery<Queries.SiteTitleQueryQuery>(graphql`
+    query SiteTitleQuery {
       site {
         siteMetadata {
           title
@@ -24,7 +24,7 @@ export function Layout({
 
   return (
     <div className={layout}>
-      <header>{data.site.siteMetadata.title}</header>
+      <header>{data.site?.siteMetadata?.title}</header>
       <Nav />
       <main>
         <h1>{pageTitle}</h1>

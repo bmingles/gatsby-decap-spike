@@ -7,6 +7,10 @@
   Gatsby Minimal TypeScript Starter
 </h1>
 
+## Notes
+
+https://www.gatsbyjs.com/docs/tutorial/getting-started/part-6/#task-update-route-to-include-a-blog-path-parameter
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**

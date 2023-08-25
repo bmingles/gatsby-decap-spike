@@ -1,18 +1,16 @@
-import { graphql } from 'gatsby'
-import { Layout, Seo } from '../components'
+import { Link, PageProps, graphql } from 'gatsby'
+import { Layout, Seo } from '../../components'
 
-export interface BlogPageProps {
-  data: any
-}
-
-export function BlogPage({ data }: BlogPageProps) {
+export function BlogPage({ data }: PageProps<Queries.BlogIndexPageQuery>) {
   return (
     <Layout pageTitle="Blog Posts">
-      {data.allMdx.nodes.map((node: any) => (
+      {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
-          <h2>{node.frontmatter.title}</h2>
-          <p>Posted: {node.frontmatter.date}</p>
-          <p>{node.excerpt}</p>
+          <h2>
+            <Link to={`/blog/${node.frontmatter?.slug ?? ''}`}>
+              {node.frontmatter?.title}
+            </Link>
+          </h2>
         </article>
       ))}
     </Layout>
@@ -26,15 +24,15 @@ export function Head() {
 }
 
 export const query = graphql`
-  query {
+  query BlogIndexPage {
     allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
+          slug
         }
         id
-        excerpt
       }
     }
   }
