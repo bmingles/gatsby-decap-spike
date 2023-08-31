@@ -7,7 +7,7 @@ export function BlogPage({ data }: PageProps<Queries.BlogIndexPageQuery>) {
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
           <h2>
-            <Link to={`/blog/${node.frontmatter?.slug ?? ''}`}>
+            <Link to={`${node.fields?.slug ?? ''}`}>
               {node.frontmatter?.title}
             </Link>
           </h2>
@@ -30,9 +30,11 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
-          slug
         }
         id
+        fields {
+          slug
+        }
       }
     }
   }
