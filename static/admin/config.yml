@@ -11,6 +11,7 @@ collections:
     folder: 'src/blog'
     create: true
     extension: mdx
+    format: frontmatter
     slug: 'index'
     media_folder: ''
     public_folder: ''
