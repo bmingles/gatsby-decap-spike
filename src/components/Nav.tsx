@@ -16,6 +16,9 @@ export function Nav({}: NavProps) {
         <li>
           <Link to="/blog">Blog</Link>
         </li>
+        <li>
+          <a href="/admin">Admin</a>
+        </li>
       </ul>
     </nav>
   )
