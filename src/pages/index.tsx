@@ -11,4 +11,9 @@ function IndexPage(_pageProps: PageProps) {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <Seo title="Home Page" />
+export const Head: HeadFC = () => (
+  <>
+    <Seo title="Home Page" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </>
+)

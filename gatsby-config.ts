@@ -25,7 +25,7 @@ const config: GatsbyConfig = {
         extensions: ['.mdx', '.md'],
       },
     },
-    'gatsby-plugin-netlify-cms',
+    // 'gatsby-plugin-netlify-cms',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
