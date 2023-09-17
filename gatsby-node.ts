@@ -1,3 +1,4 @@
+import express from 'express'
 import { createFilePath } from 'gatsby-source-filesystem'
 
 exports.onCreateBabelConfig = ({ actions }) => {
@@ -20,4 +21,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: `/blog${slug}`,
     })
   }
+}
+
+// Hack to make static folder work during local dev
+exports.onCreateDevServer = ({ app }) => {
+  app.use(express.static('static'))
 }
